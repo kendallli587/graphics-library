@@ -31,17 +31,17 @@ function line(x1, y1, x2, y2) {
     ctx.stroke();
 }
 
-function circle(x, y, r, mode) {
-    if (mode === "fill") {
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
-        ctx.fill();
-    } else if (mode === "stroke") {
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, 2 * Math.PI);
-        ctx.stroke();
-    }
-}
+// function circle(x, y, r, mode) {
+//     if (mode === "fill") {
+//         ctx.beginPath();
+//         ctx.arc(x, y, r, 0, 2 * Math.PI);
+//         ctx.fill();
+//     } else if (mode === "stroke") {
+//         ctx.beginPath();
+//         ctx.arc(x, y, r, 0, 2 * Math.PI);
+//         ctx.stroke();
+//     }
+// }
 
 function triangle(x1, y1, x2, y2, x3, y3, mode) {
     if (mode === "fill") {
@@ -68,13 +68,17 @@ function text(message, x, y, mode) {
     }
 }
 
-// function ellipse(x, y, xRadius, yRadius, rotation, mode) {
-//     if (mode === "fill") {
-
-//     } else if (mode === "stroke") {
-
-//     }
-// }
+function ellipse(x, y, xRadius, yRadius, rotation, startAngle, endAngle, mode) {
+    if (mode === "fill") {
+        ctx.beginPath();
+        ctx.ellipse(x, y, xRadius, yRadius, rotation, startAngle, endAngle);
+        ctx.fill();
+    } else if (mode === "stroke") {
+        ctx.beginPath();
+        ctx.ellipse(x, y, xRadius, yRadius, rotation, startAngle, endAngle);
+        ctx.stroke();
+    }
+}
 
 function image(img, x, y, w, h) {
 
